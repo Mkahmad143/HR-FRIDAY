@@ -5,9 +5,15 @@ const connectDB = require("./config/db");
 const errorHandler = require("./Middleware/errorHandler");
 
 // Route files
-const employeeRoutes = require("./routes/employeeRoutes");
+const employeeRoutes = require("./Routes/employeeRoutes");
 const leaveRoutes = require("./Routes/leaveRequestRoutes");
-const attendanceRoutes = require("./routes/attendanceRoutes");
+const attendanceRoutes = require("./Routes/attendanceRoutes");
+const payrollRoutes = require("./Routes/payrollRoutes");
+const trainingRoutes = require("./Routes/trainingRoutes");
+const shiftRoutes = require("./Routes/shiftRoutes");
+const companyRouter = require('./routes/companyRoutes.js');
+
+
 // Load env vars
 dotenv.config();
 
@@ -21,6 +27,10 @@ app.use(express.json());
 app.use("/api/v1/employees", employeeRoutes);
 app.use("/api/v1/leaves", leaveRoutes);
 app.use("/api/v1/attendance", attendanceRoutes);
+app.use("/api/v1/payrolls", payrollRoutes);
+app.use("/api/v1/trainings", trainingRoutes);
+app.use("/api/v1/shift", shiftRoutes);
+app.use("/api/v1/companies",companyRouter)
 
 // Error handling
 app.use(errorHandler);
