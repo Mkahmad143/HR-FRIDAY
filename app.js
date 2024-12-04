@@ -6,7 +6,7 @@ const errorHandler = require("./Middleware/errorHandler");
 
 // Route files
 const employeeRoutes = require("./routes/employeeRoutes");
-const leaveRoutes = require("./routes/leaveRequestRoutes");
+const leaveRoutes = require("./Routes/leaveRequestRoutes");
 const attendanceRoutes = require("./routes/attendanceRoutes");
 // Load env vars
 dotenv.config();

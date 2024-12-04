@@ -5,6 +5,7 @@ const {
   updateLeaveRequest,
   deleteLeaveRequest,
   getLeaveRequestById,
+  updateRequestStatus,
 } = require("../controllers/leaveRequestController");
 
 const router = express.Router();
@@ -15,5 +16,8 @@ router
   .get(getLeaveRequestById)
   .put(updateLeaveRequest)
   .delete(deleteLeaveRequest);
+
+
+  router.put("/updateStatus/:id", updateRequestStatus);
 
 module.exports = router;
