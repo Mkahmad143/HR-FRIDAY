@@ -11,7 +11,9 @@ const attendanceRoutes = require("./Routes/attendanceRoutes");
 const payrollRoutes = require("./Routes/payrollRoutes");
 const trainingRoutes = require("./Routes/trainingRoutes");
 const shiftRoutes = require("./Routes/shiftRoutes");
-const companyRouter = require('./routes/companyRoutes.js');
+const companyRouter = require('./Routes/companyRoutes.js');
+const projectRouter = require('./Routes/projectRoutes.js');
+const performanceRouter = require('./Routes/performanceRoutes.js');
 
 
 // Load env vars
@@ -31,7 +33,8 @@ app.use("/api/v1/payrolls", payrollRoutes);
 app.use("/api/v1/trainings", trainingRoutes);
 app.use("/api/v1/shift", shiftRoutes);
 app.use("/api/v1/companies",companyRouter)
-
+app.use('/api/v1/performances', performanceRouter);
+app.use('/api/v1/projects', projectRouter);
 // Error handling
 app.use(errorHandler);
 
